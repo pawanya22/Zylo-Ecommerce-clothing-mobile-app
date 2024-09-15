@@ -15,17 +15,15 @@ import {
   import { CartContext } from '../context/CartProvider';
   
   const CartScreen: React.FC = () => {
-    const context = useContext(CartContext);
+    const { cartItems, deleteCartItem, totalPrice } = useContext(CartContext);
   
     // Ensure context is defined before accessing its properties
-    if (!context) {
-      return <Text>Loading...</Text>; // Handle the undefined context case
+    if (!cartItems) {
+      return <Text>Loading...</Text>; // Handle the undefined cartItems case
     }
   
-    const { cartItems, deleteCartItem, totalPrice } = context;
-  
-    const handleDeleteItem = async (id: number) => {
-      await deleteCartItem(id);
+    const handleDeleteItem = (id: number) => {
+      deleteCartItem(id);
     };
   
     return (
@@ -40,7 +38,7 @@ import {
           )}
           keyExtractor={(item) => item.id.toString()}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ marginTop: 40, paddingBottom: 200 }}
+          contentContainerStyle={{ paddingBottom: 200 }}
           ListFooterComponent={
             <>
               <View style={styles.bottomContentContainer}>
@@ -74,6 +72,7 @@ import {
   
   const styles = StyleSheet.create({
     container: {
+      flex: 1,
       padding: 15,
     },
     header: {},
@@ -121,4 +120,3 @@ import {
       fontFamily: fonts.regular,
     },
   });
-  
