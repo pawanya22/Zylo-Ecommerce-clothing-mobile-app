@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screen/HomeScreen';
 import ProductDetailsScreen from './src/screen/ProductDetailsScreen';
 import CartScreen from './src/screen/CartScreen';
+import WelcomeScreen from './src/screen/WelcomeScreen';
 import ReorderScreen from './src/screen/ReorderScreen';
 import AccountScreen from './src/screen/AccountScreen';
 import { CartContext, CartProvider } from './src/context/CartProvider';
@@ -16,6 +17,7 @@ const Stack = createNativeStackNavigator();
 const MyHomeStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Welcome" component={WelcomeScreen} />
       <Stack.Screen name="HOME" component={HomeScreen} />
       <Stack.Screen name="PRODUCT_DETAILS" component={ProductDetailsScreen} />
     </Stack.Navigator>
@@ -34,7 +36,7 @@ const App = () => {
         >
           <Tab.Screen
             name="HOME_STACK"
-            component={MyHomeStack}
+            component={MyHomeStack}  // Home Stack contains Welcome & Home Screen
             options={{
               tabBarIcon: ({ focused, size }) => (
                 <Image

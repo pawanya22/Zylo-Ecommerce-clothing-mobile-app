@@ -1,11 +1,25 @@
 // src/navigation/types.ts
 
 // Define your navigation types here
-
+export interface Product {
+    id: number;
+    title: string;
+    price: number;
+    image: string;
+    description?: string; // Optional field
+    color?: string; // Optional field
+    size?: string; // Optional field
+  }
+  
+  export interface CartItem extends Product {
+    quantity: number;
+  }
 // Example: Stack Navigator Param List
 export type RootStackParamList = {
-    Home: undefined;
-    ProductDetails: { id: number };
+    Welcome: undefined; // Add this line to define the Welcome route
+    HOME: undefined;
+    PRODUCT_DETAILS: { item: any }; // Adjust this type according to your parameters
+    MainTabs: undefined;
     Cart: undefined;
   };
     
@@ -22,7 +36,7 @@ export type RootStackParamList = {
     // Define navigation props for the HomeScreen
     export type HomeScreenNavigationProp = StackNavigationProp<
       RootStackParamList,
-      'Home'
+      'Welcome'
     >;
     
     // Define navigation props for the CartScreen
