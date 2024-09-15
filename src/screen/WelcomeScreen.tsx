@@ -9,10 +9,10 @@ type WelcomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList,
 const WelcomeScreen: React.FC = () => {
   const navigation = useNavigation<WelcomeScreenNavigationProp>();
 
-  // Automatically navigate to Home after 3 seconds (or you can use a button)
+  // Automatically navigate to MainApp (which contains the tab navigation) after 3 seconds
   useEffect(() => {
     const timeout = setTimeout(() => {
-      navigation.navigate('HOME');
+      navigation.navigate('MainApp');  // Navigate to MainApp, which contains HOME
     }, 3000);
     return () => clearTimeout(timeout); // Clear the timeout on unmount
   }, [navigation]);
@@ -21,7 +21,7 @@ const WelcomeScreen: React.FC = () => {
     <View style={styles.container}>
       <Image source={require('../assets/account.png')} style={styles.image} />
       <Text style={styles.title}>Welcome to Our App!</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('HOME')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MainApp')}>
         <Text style={styles.buttonText}>Go to Home</Text>
       </TouchableOpacity>
     </View>
