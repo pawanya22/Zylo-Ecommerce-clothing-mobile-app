@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Image, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -8,8 +7,11 @@ import ProductDetailsScreen from './src/screen/ProductDetailsScreen';
 import CartScreen from './src/screen/CartScreen';
 import WelcomeScreen from './src/screen/WelcomeScreen';
 import ReorderScreen from './src/screen/ReorderScreen';
-import AccountScreen from './src/screen/AccountScreen';
+import LoginScreen from './src/screen/LoginScreen'; // Import LoginScreen
+import SignUpScreen from './src/screen/SignUpScreen'; // Import SignUpScreen
+import ProfileScreen from './src/screen/ProfileScreen'; // Import ProfileScreen
 import { CartContext, CartProvider } from './src/context/CartProvider';
+import { Image, Text, View } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -35,7 +37,7 @@ const MainTabNavigator = () => {
     >
       <Tab.Screen
         name="HOME_STACK"
-        component={MyHomeStack} // Home Stack contains Home & Product Details Screen
+        component={MyHomeStack}
         options={{
           tabBarIcon: ({ focused, size }) => (
             <Image
@@ -84,7 +86,7 @@ const MainTabNavigator = () => {
                     }}
                   >
                     <Text style={{ color: 'white', fontSize: 10 }}>
-                      {cartItems.length}
+                    {cartItems.length}
                     </Text>
                   </View>
                 )}
@@ -94,8 +96,8 @@ const MainTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="ACCOUNT"
-        component={AccountScreen}
+        name="PROFILE"
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ focused, size }) => (
             <Image
@@ -105,6 +107,7 @@ const MainTabNavigator = () => {
           ),
         }}
       />
+      
     </Tab.Navigator>
   );
 };
@@ -118,6 +121,10 @@ const App = () => {
           {/* Show WelcomeScreen only at the start */}
           <Stack.Screen name="Welcome" component={WelcomeScreen} />
 
+          {/* Add new login and signup screens */}
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="SignUp" component={SignUpScreen} />
+
           {/* After WelcomeScreen, display the MainTabNavigator */}
           <Stack.Screen name="MainApp" component={MainTabNavigator} />
         </Stack.Navigator>
@@ -127,3 +134,4 @@ const App = () => {
 };
 
 export default App;
+

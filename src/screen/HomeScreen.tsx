@@ -49,13 +49,7 @@ const HomeScreen: React.FC = () => {
             <Header isCart={false} />
             <View>
               <Text style={styles.headingText}>Match Your Style</Text>
-              <View style={styles.inputContainer}>
-                <Image
-                  source={require("../assets/search.png")}
-                  style={styles.searchIcon}
-                />
-                <TextInput placeholder="Search" style={styles.textInput} />
-              </View>
+              
             </View>
             <Tags />
           </>

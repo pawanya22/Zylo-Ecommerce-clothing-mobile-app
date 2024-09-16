@@ -18,15 +18,19 @@ export interface Product {
 export type RootStackParamList = {
     Welcome: undefined; // Add this line to define the Welcome route
     HOME: undefined;
+    Login: undefined; // Add this line
+    SignUp: undefined;
     PRODUCT_DETAILS: { item: any }; // Adjust this type according to your parameters
     MainTabs: undefined;
     Cart: undefined;
+    Profile: undefined;
   };
     
     // Example: Bottom Tab Navigator Param List
     export type BottomTabParamList = {
       Home: undefined;
       Cart: undefined;
+      Profile: undefined;
     };
     
     // Example: Navigation Props

@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types"; // Adjust the import based on your navigation setup
@@ -16,9 +23,10 @@ const tags: string[] = ["Trending Now", "All", "New", "Fashion", "Mens"];
 
 const Tags: React.FC = () => {
   const [selected, setSelected] = useState<string>("Trending Now");
-  const [products, setProducts] = useState<Product[]>(data["Trending Now"] || []);
+  const [products, setProducts] = useState<Product[]>(data[selected] || []);
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
+  // Safely update products based on the selected tag
   useEffect(() => {
     setProducts(data[selected] || []);
   }, [selected]);
@@ -28,7 +36,7 @@ const Tags: React.FC = () => {
   };
 
   const handleProductPress = (product: Product) => {
-    navigation.navigate('PRODUCT_DETAILS', { item: product });
+    navigation.navigate("PRODUCT_DETAILS", { item: product });
   };
 
   return (
@@ -97,7 +105,7 @@ const styles = StyleSheet.create({
   },
   productList: {
     marginTop: 20,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
   },
   productContainer: {
     flex: 1,

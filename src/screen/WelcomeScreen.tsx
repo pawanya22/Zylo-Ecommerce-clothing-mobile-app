@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -9,21 +9,19 @@ type WelcomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList,
 const WelcomeScreen: React.FC = () => {
   const navigation = useNavigation<WelcomeScreenNavigationProp>();
 
-  // Automatically navigate to MainApp (which contains the tab navigation) after 3 seconds
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      navigation.navigate('MainApp');  // Navigate to MainApp, which contains HOME
-    }, 3000);
-    return () => clearTimeout(timeout); // Clear the timeout on unmount
-  }, [navigation]);
+  const handleNavigate = () => {
+    navigation.navigate('Login'); // Navigate to LoginScreen
+  };
 
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/account.png')} style={styles.image} />
-      <Text style={styles.title}>Welcome to Our App!</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MainApp')}>
-        <Text style={styles.buttonText}>Go to Home</Text>
-      </TouchableOpacity>
+      <Image source={require('../assets/welcome.jpg')} style={styles.backgroundImage} />
+      <View style={styles.overlay}>
+        <Text style={styles.title}>Welcome to Our App!</Text>
+        <TouchableOpacity style={styles.button} onPress={handleNavigate}>
+          <Text style={styles.buttonText}>Go to Login</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -35,17 +33,29 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
   },
-  image: {
-    width: 300,
-    height: 300,
-    marginBottom: 20,
+  backgroundImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    width: '100%',
+    height: '120%',
+    resizeMode: 'cover',
+  },
+  overlay: {
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: Adds a semi-transparent overlay for better text visibility
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#444444',
+    color: '#FFFFFF',
     marginBottom: 20,
   },
   button: {
