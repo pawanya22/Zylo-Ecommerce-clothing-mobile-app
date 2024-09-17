@@ -24,6 +24,7 @@ const Header: React.FC<HeaderProps> = ({ isCart }) => {
     navigation.navigate("HOME");
   };
 
+  
   return (
     <View style={styles.header}>
       {isCart ? (
@@ -36,25 +37,13 @@ const Header: React.FC<HeaderProps> = ({ isCart }) => {
             style={styles.appBackIcon}
           />
         </TouchableOpacity>
-      ) : (
-        <View style={styles.appDrawerContainer}>
-          <Image
-            source={require("../assets/apps.png")}
-            style={styles.appDrawerIcon}
-          />
-        </View>
-      )}
+      ) : null}
 
       {isCart ? <Text style={styles.titleText}>My Cart</Text> : null}
-      <View>
-        <Image
-          source={require("../assets/Ellipse2.png")}
-          style={styles.profileImage}
-        />
-      </View>
     </View>
   );
 };
+
 
 export default Header;
 
@@ -89,5 +78,6 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontFamily: fonts.regular,
     color: "#000000",
+    marginRight: 120,
   },
 });

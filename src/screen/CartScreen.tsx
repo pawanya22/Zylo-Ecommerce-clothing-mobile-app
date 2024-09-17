@@ -106,12 +106,14 @@ import {
       fontWeight: '700',
     },
     button: {
-      backgroundColor: '#E96E6E',
+      backgroundColor: '#cfa25d',
       height: 60,
       alignItems: 'center',
       justifyContent: 'center',
-      borderRadius: 20,
+      borderRadius: 30,
       marginTop: 30,
+      width: 200,
+      marginLeft: 80,
     },
     buttonText: {
       fontSize: 24,

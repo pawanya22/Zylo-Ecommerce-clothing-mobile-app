@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   tagText: {
     fontSize: 16,
     fontFamily: "Poppins-Regular",
-    borderRadius: 10,
+    borderRadius: 30,
     paddingHorizontal: 30,
     paddingVertical: 10,
     marginHorizontal: 10,
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   isSelected: {
-    backgroundColor: "#E96E6E",
+    backgroundColor: "#cfa25d",
     color: "#FFFFFF",
   },
   container: {

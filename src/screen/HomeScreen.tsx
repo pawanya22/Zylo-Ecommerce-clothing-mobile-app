@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   headingText: {
+    marginLeft: 70,
     fontSize: 28,
     color: "#000000",
     marginVertical: 20,

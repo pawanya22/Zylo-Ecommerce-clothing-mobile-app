@@ -47,18 +47,7 @@ const MainTabNavigator = () => {
           ),
         }}
       />
-      <Tab.Screen
-        name="REORDER"
-        component={ReorderScreen}
-        options={{
-          tabBarIcon: ({ focused, size }) => (
-            <Image
-              source={focused ? require('./src/assets/focused/reorder.png') : require('./src/assets/normal/reorder.png')}
-              style={{ height: size, width: size, resizeMode: 'center' }}
-            />
-          ),
-        }}
-      />
+      
       <Tab.Screen
         name="CART"
         component={CartScreen}
