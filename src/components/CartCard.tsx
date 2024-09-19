@@ -22,6 +22,7 @@ const CartCard: React.FC<CartCardProps> = ({ item, handleDelete }) => {
       <View style={styles.details}>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.price}>${item.price}</Text>
+        <Text style={styles.size}>size - {item.size}</Text>
         <TouchableOpacity onPress={() => handleDelete(item.id)} style={styles.deleteButton}>
           <Text style={styles.deleteButtonText}>Delete</Text>
         </TouchableOpacity>
@@ -35,7 +36,7 @@ export default CartCard;
 const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
-    marginVertical: 10,
+    marginTop: 30,
     backgroundColor: '#FFFFFF',
     borderRadius: 10,
     overflow: 'hidden',
@@ -57,12 +58,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#757575',
   },
+  size: {
+    fontSize: 16,
+    color: '#757575',
+  },
   deleteButton: {
     marginTop: 10,
-    backgroundColor: '#E96E6E',
+    backgroundColor: '#cfa25d',
     borderRadius: 5,
     padding: 10,
     alignItems: 'center',
+    width: 100,
   },
   deleteButtonText: {
     color: '#FFFFFF',

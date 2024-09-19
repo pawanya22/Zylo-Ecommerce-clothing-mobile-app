@@ -50,20 +50,19 @@ export default Header;
 // Styles
 const styles = StyleSheet.create({
   appDrawerContainer: {
-    backgroundColor: "white",
-    height: 44,
+    height: 30,
     width: 44,
     borderRadius: 22,
     alignItems: "center",
     justifyContent: "center",
   },
   appDrawerIcon: {
-    height: 30,
-    width: 30,
+    height: 20,
+    width: 20,
   },
   appBackIcon: {
-    height: 24,
-    width: 24,
+    height: 10,
+    width: 20,
     marginLeft: 10,
   },
   profileImage: {
@@ -75,9 +74,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   titleText: {
-    fontSize: 28,
+    fontSize: 20,
     fontFamily: fonts.regular,
     color: "#000000",
-    marginRight: 120,
+    marginRight: 140,
   },
 });

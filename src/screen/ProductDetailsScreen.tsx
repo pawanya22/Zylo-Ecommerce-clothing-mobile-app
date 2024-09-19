@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   selectedText: {
-    color: "#E96E6E",
+    color: "#cfa25d",
   },
   colorContainer: {
     flexDirection: "row",
@@ -198,9 +198,11 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   button: {
-    backgroundColor: "#E96E6E",
+    backgroundColor: "#cfa25d",
     paddingVertical: 15,
-    borderRadius: 10,
+    marginLeft: 100,
+    borderRadius: 30,
+    width: 150,
     justifyContent: "center",
     alignItems: "center",
     marginTop: 30,

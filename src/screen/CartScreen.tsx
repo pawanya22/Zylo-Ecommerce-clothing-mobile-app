@@ -27,7 +27,7 @@ import {
     };
   
     return (
-      <LinearGradient colors={['#FDF0F3', '#FFFBFC']} style={styles.container}>
+      <LinearGradient colors={['white', 'white']} style={styles.container}>
         <View style={styles.header}>
           <Header isCart={true} />
         </View>
@@ -82,7 +82,7 @@ import {
       marginVertical: 5,
     },
     bottomContentContainer: {
-      marginHorizontal: 10,
+      marginHorizontal: 20,
       marginTop: 30,
     },
     titleText: {

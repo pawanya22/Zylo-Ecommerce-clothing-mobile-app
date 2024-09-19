@@ -109,6 +109,10 @@ dependencies {
     implementation project(':lottie-react-native')
     implementation 'com.airbnb.android:lottie:5.0.3'
 
+    implementation platform('com.google.firebase:firebase-bom:28.4.0') // Adjust version to the latest stable
+    implementation "com.google.firebase:firebase-auth"
+    implementation 'com.google.firebase:firebase-analytics'
+
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.squareup.okhttp3', module:'okhttp'

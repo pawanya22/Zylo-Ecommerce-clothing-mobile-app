@@ -42,13 +42,13 @@ const HomeScreen: React.FC = () => {
   };
 
   return (
-    <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
+    <LinearGradient colors={["white", "white"]} style={styles.container}>
       <FlatList
         ListHeaderComponent={
           <>
             <Header isCart={false} />
             <View>
-              <Text style={styles.headingText}>Match Your Style</Text>
+              <Text style={styles.headingText}>zylo</Text>
               
             </View>
             <Tags />
@@ -77,11 +77,12 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   headingText: {
-    marginLeft: 70,
+    marginLeft: 150,
     fontSize: 28,
     color: "#000000",
-    marginVertical: 20,
-    fontFamily: "Poppins-Regular",
+    marginVertical: 5,
+    marginBottom: 10,
+    fontFamily: "Poppins-Bold",
   },
   inputContainer: {
     width: "100%",
